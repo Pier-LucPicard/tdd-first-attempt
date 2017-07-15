@@ -1,0 +1,29 @@
+{
+  "name": "tdd-first-attempt",
+  "version": "1.0.0",
+  "description": "First attempt of tdd",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pier-LucPicard/tdd-first-attempt.git"
+  },
+  "keywords": [
+    "tdd"
+  ],
+  "author": "Pier-Luc Picard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pier-LucPicard/tdd-first-attempt/issues"
+  },
+  "homepage": "https://github.com/Pier-LucPicard/tdd-first-attempt#readme",
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0"
+  }
+}
