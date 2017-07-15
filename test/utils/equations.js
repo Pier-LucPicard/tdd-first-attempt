@@ -7,7 +7,7 @@ describe('Equation', () => {
     describe('calculateLuminosity', () => {
 
         it('should be a function', () => {
-           expect(equations.calculateLuminosity).to.be.a('function');
+            expect(equations.calculateLuminosity).to.be.a('function');
         });
 
         it('should calculate correctly the Luminosity based on the magnitude', () => {
@@ -25,7 +25,7 @@ describe('Equation', () => {
             expect(equations.calculateMass).to.be.a('function');
         });
 
-        it('should calculate correctly the nass based on the luminosity', () => {
+        it('should calculate correctly the mass based on the luminosity', () => {
 
             return equations.calculateMass(0.307883288067841)
                 .then((mass) => {
@@ -33,4 +33,32 @@ describe('Equation', () => {
                 })
         });
     });
+
+    describe('calculateTemperature', () => {
+
+        it('should be a function', () => {
+            expect(equations.calculateTemperature).to.be.a('function');
+        });
+
+        it('should calculate correctly the temperature', () => {
+            return equations.calculateTemperature(0.76986505, 0.307883288067841)
+                .then((temperature) => {
+                    expect(temperature).to.be.equal(4923.99066007011)
+                })
+        })
+    });
+
+    describe('calculateLifetime', () => {
+
+        it('should be a function', () => {
+            expect(equations.calculateLifetime).to.be.a('function');
+        });
+
+        it('should calculate correctly the lifetime', () => {
+            return equations.calculateLifetime(0.7142078257789954)
+                .then((lifetime) => {
+                    expect(lifetime).to.be.equal(23197356058.560158)
+                })
+        })
+    })
 });

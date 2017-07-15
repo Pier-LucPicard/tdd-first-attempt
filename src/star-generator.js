@@ -18,6 +18,14 @@ function starGenerator(config) {
         })
         .then((mass) => {
             star.mass = mass;
+            return equation.calculateTemperature(star.solarRadius, star.luminosity);
+        })
+        .then((temperature) => {
+            star.temperature = temperature;
+            return equation.calculateLifetime(star.mass);
+        })
+        .then((lifetime) => {
+            star.lifetime = lifetime;
             return Promise.resolve(star);
         });
 

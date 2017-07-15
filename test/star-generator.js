@@ -54,6 +54,19 @@ describe('Generate Star', () => {
                 expect(star.mass).to.be.a('number');
            })
     });
+    
+    it('should have a temperature', () => {
+        return starGenerator(config)
+            .then((star) => {
+                expect(star.temperature).to.be.a('number');
+            })
+    });
 
+    it('should have a lifetime', () => {
+        return starGenerator(config)
+            .then((star) => {
+                expect(star.lifetime).to.be.a('number');
+            })
+    });
 
 });
