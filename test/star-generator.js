@@ -48,5 +48,12 @@ describe('Generate Star', () => {
             })
     });
 
+    it('should have a mass', () => {
+       return starGenerator(config)
+           .then((star) => {
+                expect(star.mass).to.be.a('number');
+           })
+    });
+
 
 });

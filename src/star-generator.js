@@ -14,6 +14,10 @@ function starGenerator(config) {
     return equation.calculateLuminosity(star.magnitude)
         .then((luminosity) => {
             star.luminosity = luminosity;
+            return equation.calculateMass(luminosity);
+        })
+        .then((mass) => {
+            star.mass = mass;
             return Promise.resolve(star);
         });
 
