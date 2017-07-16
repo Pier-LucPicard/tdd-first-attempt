@@ -18,9 +18,9 @@ module.exports = {
     universeBoundry: {
         maxX: 180000,
         maxY: 180000,
-        maxZ: 2000,
+        maxZ: 2300,
         minX: 100000,
         minY: 100000,
-        minZ: 2000
+        minZ: 1800
     }
 };

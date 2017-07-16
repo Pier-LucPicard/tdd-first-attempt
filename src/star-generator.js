@@ -13,6 +13,15 @@ function generateRandomParams(config, star) {
     return Promise.resolve(star);
 }
 
+function addPosition(config,star){
+    star.position = {};
+    star.position.x = random.getRandomIntInclusiveForNegative(config.universeBoundry.minX,config.universeBoundry.maxX);
+    star.position.y = random.getRandomIntInclusiveForNegative(config.universeBoundry.minY,config.universeBoundry.maxY);
+    star.position.z = random.getRandomIntInclusiveForNegative(config.universeBoundry.minZ,config.universeBoundry.maxZ);
+
+    return Promise.resolve(star);
+}
+
 function addLuminosity(star) {
     return equation.calculateLuminosity(star.magnitude)
         .then((luminosity) => {
@@ -48,6 +57,7 @@ function addLifetime(star) {
 function starGenerator(config) {
 
     return generateRandomParams(config, {})
+        .then((star) => addPosition(config,star))
         .then(addLuminosity)
         .then(addMass)
         .then(addTemperature)

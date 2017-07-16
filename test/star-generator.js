@@ -19,6 +19,20 @@ describe('Generate Star', () => {
 
     describe('Star composition', () => {
 
+        it('should have a 3D coordinate', () => {
+            return starGenerator(config)
+                .then((star) => {
+                    expect(star.position).to.be.a('object');
+                    expect(star.position.x).to.be.a('number');
+                    expect(star.position.y).to.be.a('number');
+                    expect(star.position.z).to.be.a('number');
+
+                });
+        })
+    });
+
+    describe('Star composition', () => {
+
         it('should have a id', () => {
             return starGenerator(config)
                 .then((star) => {
